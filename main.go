@@ -1,3 +1,23 @@
+// ===== PROGRESS NOTES =====
+// DONE (Oct 28): Go set up on Pi, repo on GitHub,
+//   baseline scanner: walks folders, reads lines, finds AWS keys,
+//   skips node_modules and .git
+//
+// NEXT SESSION:
+//   1. Check: `go run . testdata` prints ONLY [AWS KEY] testdata/config.py:1
+//   2. Push test files: git add testdata && git commit -m "Add test fixtures" && git push
+//      (if GitHub blocks it -> screenshot the message for review)
+//   3. Exercise: add a Slack webhook regex, same pattern as AWS.
+//      Should flag testdata/deploy/hook.yml
+//
+// AFTER THAT (concurrency, milestone 1):
+//   Walker sends paths into a channel instead of calling scanFile directly.
+//   Program must exit on its own (who closes the channel, and when?)
+//
+// REMEMBER: imports use "/", code uses "."; package things are Capitalized;
+//   save (Ctrl+S) before go run; regex in `backticks`
+// ==========================
+
 package main
 
 import (
